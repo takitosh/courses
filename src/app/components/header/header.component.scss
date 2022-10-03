@@ -1,0 +1,16 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #eee;
+  color: black;
+  font-weight: 300;
+}
+
+.header img {
+  margin: 0 16px;
+}
