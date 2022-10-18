@@ -1,0 +1,8 @@
+<button [ngClass]="{'button': true, 'button--spacious': cfg.title, 'button--tiny-margins': cfg.tinyMargins}" type="button">
+  <span *ngIf="cfg.title" class="button__title">{{cfg.title}}</span>
+  <span *ngIf="cfg.icon" [ngSwitch]="cfg.icon" class="button__icon">
+    <fa-icon *ngSwitchCase="'pen'" [icon]="['fas', 'pen']"></fa-icon>
+    <fa-icon *ngSwitchCase="'trash'" [icon]="['fas', 'trash']"></fa-icon>
+    <fa-icon *ngSwitchCase="'user'" [icon]="['fas', 'user']"></fa-icon>
+  </span>
+</button>

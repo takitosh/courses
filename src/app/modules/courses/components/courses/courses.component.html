@@ -1,0 +1,27 @@
+<p>Courses:</p>
+<ul>
+  <li *ngFor="let course of courses">
+    <app-course-card [course]="{
+      title: course.title,
+      description: course.description,
+      creationDate: course.creationDate,
+      duration: course.duration,
+      authors: course.authors
+    }">
+      <section class="course-card__buttons">
+        <app-button class="course-card__button" [cfg]="{
+          title: 'Show course',
+          tinyMargins: true
+        }"></app-button>
+        <app-button class="course-card__button" [cfg]="{
+          icon: 'pen',
+          tinyMargins: true
+        }"></app-button>
+        <app-button class="course-card__button" [cfg]="{
+          icon: 'trash',
+          tinyMargins: true
+        }"></app-button>
+      </section>
+    </app-course-card>
+  </li>
+</ul>

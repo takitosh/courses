@@ -1,0 +1,11 @@
+.course-card {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px dotted lightgray;
+
+  &__button {
+    .button {
+      margin: 2px;
+    }
+  }
+}

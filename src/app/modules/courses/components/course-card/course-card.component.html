@@ -1,0 +1,10 @@
+<article class="course-card">
+  <p class="course-card__title">{{model.title}}</p>
+  <p class="course-card__description">{{model.description}}</p>
+  <p class="course-card__date">{{model.creationDate | date:'dd.MM.YYYY' }}</p>
+  <p class="course-card__duration">{{model.duration | duration}}</p>
+  <ul class="course-card__authors">
+    <li class="course-card__author" *ngFor='let author of model.authors'>{{ author }}</li>
+  </ul>
+  <ng-content></ng-content>
+</article>
