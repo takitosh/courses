@@ -8,6 +8,7 @@ import { Course } from '../../interfaces/course';
 })
 export class CourseCardComponent implements OnInit {
   @Input() course: Course = {};
+  @Input() isEditable: boolean = true;
 
   model: Course = {};
 
@@ -15,6 +16,7 @@ export class CourseCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.model = {
+      id: this.course.id,
       title: this.course.title,
       description: this.course.description,
       creationDate: this.course.creationDate,

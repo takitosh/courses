@@ -1,4 +1,8 @@
-<button [ngClass]="{'button': true, 'button--spacious': cfg.title, 'button--tiny-margins': cfg.tinyMargins}" type="button">
+<button
+  *ngIf="!(cfg.visible == false)"
+  [ngClass]="{'button': true, 'button--spacious': cfg.title, 'button--tiny-margins': cfg.tinyMargins}"
+  (click)="buttonClick(cfg.id)"
+  type="button">
   <span *ngIf="cfg.title" class="button__title">{{cfg.title}}</span>
   <span *ngIf="cfg.icon" [ngSwitch]="cfg.icon" class="button__icon">
     <fa-icon *ngSwitchCase="'pen'" [icon]="['fas', 'pen']"></fa-icon>

@@ -1,25 +1,39 @@
 <p>Courses:</p>
 <ul>
   <li *ngFor="let course of courses">
-    <app-course-card [course]="{
-      title: course.title,
-      description: course.description,
-      creationDate: course.creationDate,
-      duration: course.duration,
-      authors: course.authors
-    }">
+    <app-course-card
+      [course]="{
+        id: course.id,
+        title: course.title,
+        description: course.description,
+        creationDate: course.creationDate,
+        duration: course.duration,
+        authors: course.authors
+      }"
+      [isEditable]="true">
       <section class="course-card__buttons">
-        <app-button class="course-card__button" [cfg]="{
+        <app-button
+          (buttonClickEvent)="showCourse($event)"
+          class="course-card__button" [cfg]="{
+          id: course.id,
           title: 'Show course',
           tinyMargins: true
         }"></app-button>
-        <app-button class="course-card__button" [cfg]="{
+        <app-button
+          (buttonClickEvent)="editCourse($event)"
+          class="course-card__button" [cfg]="{
+          id: course.id,
           icon: 'pen',
-          tinyMargins: true
+          tinyMargins: true,
+          visible: isEditable
         }"></app-button>
-        <app-button class="course-card__button" [cfg]="{
+        <app-button
+          (buttonClickEvent)="removeCourse($event)"
+          class="course-card__button" [cfg]="{
+          id: course.id,
           icon: 'trash',
-          tinyMargins: true
+          tinyMargins: true,
+          visible: isEditable
         }"></app-button>
       </section>
     </app-course-card>

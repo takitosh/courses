@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import { FaIconLibrary } from "@fortawesome/angular-fontawesome";
 // import { IconProp } from '@fortawesome/fontawesome-svg-core'; ??? iconName from configuration
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -10,6 +10,11 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 })
 export class ButtonComponent implements OnInit {
   @Input() cfg: any;
+  @Output() buttonClickEvent = new EventEmitter<string>();
+
+  buttonClick(value: string) {
+    this.buttonClickEvent.emit(value);
+  }
 
   constructor(library: FaIconLibrary) {
     library.addIconPacks(fas);
