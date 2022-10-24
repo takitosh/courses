@@ -1,1 +1,15 @@
-<p>login works!</p>
+<p>Login:</p>
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" novalidate>
+  <input name="email" ngModel required passwordStrength #email="ngModel"><br>
+  <div *ngIf="email.errors?.['required']">
+    Email is required.
+  </div>
+  <div *ngIf="email.errors?.['validEmailFormat']">
+    Email is not valid
+  </div>
+  <input name="password" ngModel required passwordStrength #password="ngModel"><br>
+  <div *ngIf="password.errors?.['required']">
+    Password is required.
+  </div>
+  <button>Submit</button>
+</form>

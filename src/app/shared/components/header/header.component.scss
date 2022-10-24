@@ -1,5 +1,5 @@
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -10,6 +10,7 @@
   background-color: #eee;
   color: black;
   font-weight: 300;
+  z-index: 1;
 
   img {
     margin: 0 16px;

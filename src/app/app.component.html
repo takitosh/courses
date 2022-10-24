@@ -7,7 +7,18 @@
 </app-header>
 <div class="content" role="main">
 
-  <app-courses></app-courses>
+  <app-registration class="registration"></app-registration>
+  <app-login class="login"></app-login>
+  <app-info class="info"
+            [title]="'Your list is empty'"
+            [text]="'Please use the \'Add new course\' button\n'+
+                    'to add your first course'"
+  ></app-info>
+
+  <app-courses class="courses"></app-courses>
+  <section class="editor">
+    <p class="editor__title">Editor</p>
+  </section>
 
   <svg id="clouds" xmlns="http://www.w3.org/2000/svg" width="2611.084" height="485.677" viewBox="0 0 2611.084 485.677">
     <title>Gray Clouds Background</title>
