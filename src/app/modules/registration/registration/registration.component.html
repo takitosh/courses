@@ -1,19 +1,28 @@
-<p>Registration:</p>
-<form #registrationForm="ngForm" (ngSubmit)="onSubmit(registrationForm)" novalidate>
-  <input name="first" ngModel required #first="ngModel"><br>
-  <input name="last" ngModel><br>
-  <input name="email" ngModel required emailValidator #email="ngModel"><br>
-  <div *ngIf="email.errors?.['required']">
+<p class="heading">Registration Form</p>
+<form (ngSubmit)="onSubmit()" [formGroup]="registrationForm" novalidate>
+  <input name="name" type="text" placeholder="Name" [formControlName]="'name'"><br>
+  <div class="error-msg" *ngIf="registrationForm.controls['name'].errors?.['required'] &&
+  (registrationForm.controls['name'].touched || submitted)">
+    Name is required.
+  </div>
+  <div class="error-msg" *ngIf="registrationForm.controls['name'].errors?.['minlength'] &&
+  (registrationForm.controls['name'].touched || submitted)">
+    Name should not be less than 6 symbols.
+  </div>
+  <input name="email" type="email" placeholder="E-mail" [formControlName]="'email'"><br>
+  <div class="error-msg" *ngIf="registrationForm.controls['email'].errors?.['required'] &&
+  (registrationForm.controls['email'].touched || submitted)">
     Email is required.
   </div>
-  <div *ngIf="email.errors?.['validEmailFormat']">
+  <div class="error-msg" *ngIf="registrationForm.controls['email'].errors?.['validEmailFormat'] &&
+  (registrationForm.controls['email'].touched || submitted)">
     Email is not valid.
   </div>
-  <button>Submit</button>
+  <input name="password" type="password" placeholder="Password" [formControlName]="'password'"><br>
+  <div class="error-msg" *ngIf="registrationForm.controls['password'].invalid &&
+  (registrationForm.controls['password'].touched || submitted)">
+    Password is required.
+  </div>
+  <button type="submit">Register</button>
 </form>
 <br><br>
-<p>Email value: {{ email.value }}</p>
-<p highlight>Email valid: {{ email.valid }}</p>
-<br><br>
-<p>Form value: {{ registrationForm.value | json }}</p>
-<p>Form valid: {{ registrationForm.valid }}</p>
