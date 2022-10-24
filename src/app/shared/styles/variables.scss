@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans+Display:wght@400;800&display=swap');
+
+// Fonts
+
+$primaryFont: 'Noto Sans Display', sans-serif;
+$secondaryFont: 'Montserrat', sans-serif;
+
+// Colors
+
+$black: #000500;
+$honey-yellow: #FFB229;
+$army-green: #3B4E0E;
+$lemon-meringue: #FFF0CB;
+$snow: #FFFBFF;
+$flame: #DE4E0E;
+$formBlue: #50808E;
+$formLightBlue: #DCEEFC;
+
+// Palette
+
+$dark: $black;
+$light: $snow;
+$primary: $honey-yellow;
+$secondary: $army-green;
+$background: $lemon-meringue;
+$error: $flame;
+$forms: $formBlue;
+$formsBackground: $formLightBlue;
+

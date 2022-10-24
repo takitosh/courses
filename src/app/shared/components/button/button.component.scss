@@ -1,34 +1,7 @@
-$main: #fff;
-$secondary: #e51876;
+@import "../../styles/index";
 
 .button {
-  appearance: none;
-  padding: 4px;
-  margin: 2px 16px;
-  border-radius: 3px;
-  font-size: 14px;
-  text-align: center;
-  text-transform: uppercase;
-  text-decoration: none;
-  outline: none;
-  cursor: pointer;
-  border: 1px solid $secondary;
-  background-color: transparent;
-  color: $secondary;
-
-  &:hover {
-    border: 1px solid $secondary;
-    background-color: $secondary;
-    color: $main;
-  }
-
-  &:focus-visible {
-    outline: 2px dashed #1976d2;
-  }
-
-  &:active {
-    outline: 2px solid #1976d2;
-  }
+  @include button();
 
   &__title,
   &__icon {

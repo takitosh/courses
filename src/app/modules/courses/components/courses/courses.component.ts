@@ -10,6 +10,10 @@ export class CoursesComponent implements OnInit {
   courses: Course[] = [];
   isEditable: boolean = true;
 
+  search(phrase: string) {
+    console.log(phrase);
+  }
+
   showCourse(id: string) {
     console.log("showCourse: " + id);
   }

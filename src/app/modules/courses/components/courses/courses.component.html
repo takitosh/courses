@@ -1,4 +1,8 @@
 <p class="courses-title">Courses</p>
+<app-search class="search"
+            (searchEvent)="search($event)"
+            [placeholder]="'Search courses here ...'"
+></app-search>
 <ul>
   <li *ngFor="let course of courses">
     <app-course-card

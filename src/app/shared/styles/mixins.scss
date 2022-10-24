@@ -1,0 +1,31 @@
+@import "variables";
+
+@mixin button() {
+  appearance: none;
+  padding: 4px 8px;
+  margin: 8px 0;
+  border-radius: 3px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid $secondary;
+  background-color: transparent;
+  color: $secondary;
+
+  &:hover {
+    border: 1px solid $secondary;
+    background-color: $secondary;
+    color: $primary;
+  }
+
+  &:focus-visible {
+    @include outline();
+  }
+}
+
+@mixin outline() {
+  outline: 2px dashed $formBlue;
+}

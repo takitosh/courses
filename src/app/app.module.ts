@@ -13,15 +13,15 @@ import {InfoModule} from "./modules/info/info/info.module";
   declarations: [
     AppComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CoursesModule,
-    SharedModule,
-    RegistrationModule,
-    LoginModule,
-    InfoModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        CoursesModule,
+        SharedModule,
+        RegistrationModule,
+        LoginModule,
+        InfoModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

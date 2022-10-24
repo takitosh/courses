@@ -8,16 +8,19 @@
   align-items: center;
   justify-content: space-between;
   background-color: #eee;
-  color: black;
-  font-weight: 300;
   z-index: 1;
+  padding: 0 42px;
 
   img {
-    margin: 0 16px;
+    margin: 0 16px 0 0;
   }
 
   &__section {
     display: flex;
     align-items: center;
+  }
+
+  .heading {
+    margin: 0;
   }
 }
