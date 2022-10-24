@@ -1,0 +1,19 @@
+<p>Registration:</p>
+<form #registrationForm="ngForm" (ngSubmit)="onSubmit(registrationForm)" novalidate>
+  <input name="first" ngModel required #first="ngModel"><br>
+  <input name="last" ngModel><br>
+  <input name="email" ngModel required emailValidator #email="ngModel"><br>
+  <div *ngIf="email.errors?.['required']">
+    Email is required.
+  </div>
+  <div *ngIf="email.errors?.['validEmailFormat']">
+    Email is not valid.
+  </div>
+  <button>Submit</button>
+</form>
+<br><br>
+<p>Email value: {{ email.value }}</p>
+<p highlight>Email valid: {{ email.valid }}</p>
+<br><br>
+<p>Form value: {{ registrationForm.value | json }}</p>
+<p>Form valid: {{ registrationForm.valid }}</p>

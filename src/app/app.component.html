@@ -1,4 +1,10 @@
-<app-header></app-header>
+<app-header>
+  <span>{{username}}</span>
+  <app-button [cfg]="{
+    title: username,
+    icon: 'user'
+  }"></app-button>
+</app-header>
 <div class="content" role="main">
 
   <app-courses></app-courses>

@@ -6,11 +6,17 @@
   height: 60px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: #eee;
   color: black;
   font-weight: 300;
-}
 
-.header img {
-  margin: 0 16px;
+  img {
+    margin: 0 16px;
+  }
+
+  &__section {
+    display: flex;
+    align-items: center;
+  }
 }

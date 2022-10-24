@@ -1,0 +1,11 @@
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.course-card {
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
