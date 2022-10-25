@@ -6,7 +6,10 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
-  styleUrls: ['./button.component.scss']
+  styleUrls: [
+    './button.component.scss',
+    '../../styles/index.scss'
+  ]
 })
 export class ButtonComponent implements OnInit {
   @Input() cfg: any;

@@ -1,0 +1,39 @@
+@import "variables";
+
+@mixin fontstyle ($style: 'paragraph'){
+  @if ($style == 'heading') {
+    font-family: $primaryFont;
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    font-weight: 400;
+  } @else if ($style == 'subheading'){
+    font-family: $primaryFont;
+    font-size: 1.2rem;
+    line-height: 1.75rem;
+    font-weight: 800;
+  } @else if ($style == 'error'){
+    font-family: $secondaryFont;
+    font-size: 0.75rem;
+    line-height: 0.75rem;
+    font-weight: 800;
+  } @else {
+    // $style == 'paragraph'
+    font-family: $secondaryFont;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    font-weight: 400;
+  }
+}
+
+.heading {
+  @include fontstyle('heading');
+
+  margin: 0 0 .5rem;
+}
+
+.error-msg {
+  @include fontstyle('error');
+
+  margin-top: -.75rem;
+  color: $error;
+}
