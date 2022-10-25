@@ -1,5 +1,5 @@
 <p class="heading">Registration Form</p>
-<form (ngSubmit)="onSubmit()" [formGroup]="registrationForm" novalidate>
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" novalidate>
   <input name="name" type="text" placeholder="Name" [formControlName]="'name'"><br>
   <div class="error-msg" *ngIf="registrationForm.controls['name'].errors?.['required'] &&
   (registrationForm.controls['name'].touched || submitted)">
